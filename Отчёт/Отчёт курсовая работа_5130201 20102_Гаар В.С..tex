@@ -377,6 +377,63 @@ stringstyle =\bfseries} % шрифт для строк
    \label{img:automaton}
 \end{figure}
 
+Этому графу переходов соответствует следующая таблица переходов (Табл.~\ref{tbl:perehod}).
+
+\newpage
+\begin{table}[H]
+  \centering
+  \caption{Таблица переходов}
+  \label{tbl:perehod}
+  \footnotesize
+  \begin{tabularx}{0.85\textwidth}{|c|X||X|c|}
+  \hline
+  \textbf{Вход} & \textbf{Текущее состояние} & \textbf{Следующее состояние} & \textbf{Выход} \\
+  \hline
+  \hline
+  % s0
+  a  & $s_0:$ time & $s_1:$ minutes correction & $z_0$ \\
+  b  & $s_0:$ time & $s_4:$ stopwatch & $z_0$ \\
+  ab & $s_0:$ time & $s_6:$ time stop & $z_7$ \\
+  \hline
+
+  % s1
+  a  & $s_1:$ minutes correction & $s_2:$ hours correction & $z_0$ \\
+  b  & $s_1:$ minutes correction & $s_1:$ minutes correction & $z_1$ \\
+  ab & $s_1:$ minutes correction & $s_1:$ minutes correction & $z_0$ \\
+  \hline
+
+  % s2
+  a  & $s_2:$ hours correction & $s_3:$ day of the week correction& $z_0$ \\
+  b  & $s_2:$ hours correction & $s_2:$ hours correction & $z_2$ \\
+  ab & $s_2:$ hours correction & $s_2:$ hours correction & $z_0$ \\
+  \hline
+
+  % s3
+  a  & $s_3:$ day of the week correction & $s_0:$ time & $z_0$ \\
+  b  & $s_3:$ day of the week correction & $s_3:$ day of the week correction & $z_3$ \\
+  ab & $s_3:$ day of the week correction & $s_3:$ day of the week correction & $z_0$ \\
+  \hline
+
+  % s4
+  a  & $s_4:$ stopwatch & $s_4:$ stopwatch & $z_4$ \\
+  b  & $s_4:$ stopwatch & $s_5:$ stopwatch pause & $z_5$ \\
+  ab & $s_4:$ stopwatch & $s_0:$ time & $z_0$ \\
+  \hline
+
+  % s5
+  a  & $s_5:$ stopwatch pause & $s_5:$ stopwatch pause & $z_6$ \\
+  b  & $s_5:$ stopwatch pause & $s_4:$ stopwatch & $z_5$ \\
+  ab & $s_5:$ stopwatch pause & $s_0:$ time & $z_0$ \\
+  \hline
+
+  % s6
+  a  & $s_6:$ time stop & $s_6:$ time stop & $z_0$ \\
+  b  & $s_6:$ time stop & $s_6:$ time stop & $z_0$ \\
+  ab & $s_6:$ time stop & $s_0:$ time & $z_7$ \\
+  \hline
+  \end{tabularx}
+\end{table}
+
 \subsection{Управляющие воздействия}
 Входом в управляющий автомат являются преобразованные внешние воздействия, выходы -- это два типа управляющих воздействий: импульсные и потенциальные. 
 Импульсные команды --- это кратковременные воздействия, которые подаются в момент нажатия внешних кнопок владельцем часов. Потенциальные команды --- это продолжительное воздействие, которое действует в период нахождения автомата в определенном состоянии и может измениться только при переключении автомата в другое состояние.
