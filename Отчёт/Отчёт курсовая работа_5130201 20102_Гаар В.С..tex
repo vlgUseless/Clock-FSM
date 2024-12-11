@@ -400,7 +400,7 @@ stringstyle =\bfseries} % шрифт для строк
 \end{itemize}
 
 \subsection{Кодирование входных и выходных воздействий, состояний автомата}
-Кодирование входных сигналов, выходных сигналов и состояний автомата представлены в Табл.~\ref{}, Табл.~\ref{} и Табл.~\ref{} соответственно.
+Кодирование входных сигналов, выходных сигналов и состояний автомата представлены в Табл.~\ref{tbl:code_input}, Табл.~\ref{tbl:code_output} и Табл.~\ref{tbl:code_states} соответственно.
 
 \begin{table}[h!]
   \centering
@@ -416,6 +416,33 @@ stringstyle =\bfseries} % шрифт для строк
   $\mathbf{b}$ & 0 & 1 \\
   \hline
   $\mathbf{ab}$ & 1 & 1 \\
+  \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+  \centering
+  \caption{Кодирование выходных сигналов}
+  \label{tbl:code_output}
+\begin{tabular}{|c|c|c|c|}
+  \hline
+        & $\mathbf{y_1}$& $\mathbf{y_2}$ & $\mathbf{y_3}$  \\
+  \hline
+  $\mathbf{z_0}$ & 0 & 0 & 0 \\
+  \hline
+  $\mathbf{z_1}$ & 0 & 0 & 1 \\
+  \hline
+  $\mathbf{z_2}$ & 0 & 1 & 0 \\
+  \hline
+  $\mathbf{z_3}$ & 0 & 1 & 1 \\
+  \hline
+  $\mathbf{z_4}$ & 1 & 0 & 0 \\
+  \hline
+  $\mathbf{z_5}$ & 1 & 0 & 1 \\
+  \hline
+  $\mathbf{z_6}$ & 1 & 1 & 0 \\
+  \hline
+  $\mathbf{z_7}$ & 1 & 1 & 1 \\
   \hline
   \end{tabular}
 \end{table}
