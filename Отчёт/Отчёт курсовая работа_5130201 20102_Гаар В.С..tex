@@ -633,6 +633,35 @@ stringstyle =\bfseries} % шрифт для строк
   \end{tabular}
 \end{table}
 
+\subsubsection{Минимизация для $Q_1$-$Q_3$}
+На Рис.~\ref{img:q1}-\ref{img:q3} приведены карты Карно для $Q_1, Q_2, Q_3$ соответственно.
+
+\begin{figure}[H]
+   \centering
+   \includegraphics[width=0.7\linewidth]{q1.png}
+   \caption{Карта Карно для $Q_1$}
+   \label{img:q1}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{q2.png}
+  \caption{Карта Карно для $Q_2$}
+  \label{img:q2}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{q3.png}
+  \caption{Карта Карно для $Q_3$}
+  \label{img:q3}
+\end{figure}
+
+
+\[Q_1 = \neg x_1 q_1 \neg q_2 + \neg x_1 q_1 \neg q_3 + x_2 \neg q_1 \neg q_2 \neg q_3\]
+\[Q_2 = x_1 \neg q_1 \neg q_3 + x_2 \neg q_1 q_2 + \neg x_1 q_2 \neg q_3 + \neg x_2 \neg q_1 \neg q_2 q_3\]
+\[Q_3 = x_2 \neg q_1 q_3 + \neg x_2 \neg q_1 \neg q_3 + \neg x_2 q_1 \neg q_2 q_3 + \neg x_1 x_2 q_1 \neg q_2 \neg q_3\]
+
 \newpage
 \section{Общая структурная схема}
 Общая структурная схема представлена на Рис.~\hyperlink{img:scheme}{2}.
