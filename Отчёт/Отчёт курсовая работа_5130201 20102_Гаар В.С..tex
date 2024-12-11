@@ -611,23 +611,24 @@ stringstyle =\bfseries} % шрифт для строк
   \caption{Преобразование FL}
   \label{tbl:fl}
   \footnotesize
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  \begin{tabular}{|c||c|c|c||c|c|c|c|c|c|}
   \hline
-  $\mathbf{q_1}$& $\mathbf{q_2}$ & $\mathbf{q_3}$ & $\mathbf{L_1}$ & $\mathbf{L_2}$ & $\mathbf{L_3}$ & $\mathbf{L_4}$ & $\mathbf{L_5}$ & $\mathbf{L_6}$ \\
+      & $\mathbf{q_1}$& $\mathbf{q_2}$ & $\mathbf{q_3}$ & $\mathbf{L_1}$ & $\mathbf{L_2}$ & $\mathbf{L_3}$ & $\mathbf{L_4}$ & $\mathbf{L_5}$ & $\mathbf{L_6}$ \\
   \hline
-  0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
   \hline
-  0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+  0   & 0 & 0 & 0   & 0 & 0 & 1 & 1 & 1 & 1 \\
   \hline
-  0 & 1 & 0 & & & & & & \\
+  1   & 0 & 0 & 1   & 0 & 0 & 1 & 0 & 0 & 1 \\
   \hline
-  0 & 1 & 1 & & & & & & \\
+  2   & 0 & 1 & 0   & 0 & 0 & 0 & 1 & 0 & 1 \\
   \hline
-  1 & 0 & 0 & & & & & & \\
+  3   & 0 & 1 & 1   & 0 & 0 & 0 & 0 & 1 & 1 \\
   \hline
-  1 & 0 & 1 & & & & & & \\
+  4   & 1 & 0 & 0   & 1 & 1 & 1 & 1 & 0 & 1 \\
   \hline
-  1 & 1 & 0 & & & & & & \\
+  5   & 1 & 0 & 1   & 0 & 1 & 1 & 1 & 0 & 1 \\
+  \hline
+  6   & 1 & 1 & 0   & 0 & 0 & 1 & 1 & 1 & 0 \\
   \hline
   \end{tabular}
 \end{table}
