@@ -473,6 +473,35 @@ stringstyle =\bfseries} % шрифт для строк
   \end{tabular}
 \end{table}
 
+\subsection{Минимизация функций}
+В соответствии с закодированными состояниями были построены таблицы истинности для преобразований FL и F (Табл.~\ref{} и Табл.~\ref{}).
+
+\begin{table}[h!]
+  \centering
+  \caption{Преобразование FL}
+  \label{tbl:fl}
+  \footnotesize
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+  \hline
+  $\mathbf{q_1}$& $\mathbf{q_2}$ & $\mathbf{q_3}$ & $\mathbf{L_1}$ & $\mathbf{L_2}$ & $\mathbf{L_3}$ & $\mathbf{L_4}$ & $\mathbf{L_5}$ & $\mathbf{L_6}$ \\
+  \hline
+  0 & 0 & 0 & 0 & 0 & 1 & 1 & 1 & 1 \\
+  \hline
+  0 & 0 & 1 & 0 & 0 & 1 & 0 & 0 & 1 \\
+  \hline
+  0 & 1 & 0 & & & & & & \\
+  \hline
+  0 & 1 & 1 & & & & & & \\
+  \hline
+  1 & 0 & 0 & & & & & & \\
+  \hline
+  1 & 0 & 1 & & & & & & \\
+  \hline
+  1 & 1 & 0 & & & & & & \\
+  \hline
+  \end{tabular}
+\end{table}
+
 \newpage
 \section{Общая структурная схема}
 Общая структурная схема представлена на Рис.~\hyperlink{img:scheme}{2}.
