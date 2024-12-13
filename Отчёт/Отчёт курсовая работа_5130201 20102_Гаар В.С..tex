@@ -32,6 +32,7 @@
 \usepackage{multirow}
 \usepackage{array}
 \usepackage{tabularx}
+\usepackage{subfigure}
 
 \definecolor{apricot}{HTML}{FFF0DA}
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -391,6 +392,7 @@ stringstyle =\bfseries} % шрифт для строк
   \end{tabular}
 \end{table}
 
+\newpage
 На Рис.~\ref{img:automaton} представлен реализованный конечный автомат.
 
 \begin{figure}[H]
@@ -664,28 +666,21 @@ stringstyle =\bfseries} % шрифт для строк
   \end{tabular}
 \end{table}
 
+\newpage
 \subsubsection{Минимизация для $Q_1$-$Q_3$}
-По Табл.~\ref{tbl:f} были построены формулы для $Q_1, Q_2, Q_3$. На Рис.~\ref{img:q1}-\ref{img:q3} приведены карты Карно для минимизации $Q_1, Q_2, Q_3$ соответственно.
+По Табл.~\ref{tbl:f} были построены формулы для $Q_1, Q_2, Q_3$. На Рис.~\ref{img:karno_q} приведены карты Карно для минимизации $Q_1, Q_2, Q_3$ соответственно.
 
 \begin{figure}[H]
-   \centering
-   \includegraphics[width=0.7\linewidth]{q1.png}
-   \caption{Карта Карно для $Q_1$}
-   \label{img:q1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{q2.png}
-  \caption{Карта Карно для $Q_2$}
-  \label{img:q2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{q3.png}
-  \caption{Карта Карно для $Q_3$}
-  \label{img:q3}
+\centering \subfigure[]{
+  \includegraphics[width=0.4\linewidth]{q1.png} \label{img:q1} }  
+  \hspace{4ex}
+  \subfigure[]{
+  \includegraphics[width=0.4\linewidth]{q2.png} \label{img:q2} }
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{q3.png} \label{img:q3} }  
+  \caption{Карты карно для \subref{img:q1} $Q_1$; \subref{img:q2} $Q_2$;
+  \subref{img:q3} $Q_3$.
+  }
+  \label{img:karno_q}
 \end{figure}
 
 
@@ -694,77 +689,46 @@ stringstyle =\bfseries} % шрифт для строк
 \[Q_3 = x_2 \neg q_1 q_3 + \neg x_2 \neg q_1 \neg q_3 + \neg x_2 q_1 \neg q_2 q_3 + \neg x_1 x_2 q_1 \neg q_2 \neg q_3\]
 
 \subsubsection{Минимизация для $y_1$-$y_3$}
-По Табл.~\ref{tbl:f} были построены формулы для $y_1, y_2, y_3$. На Рис.~\ref{img:y1}-\ref{img:y3} приведены карты Карно для минимизации $y_1, y_2, y_3$ соответственно.
+По Табл.~\ref{tbl:f} были построены формулы для $y_1, y_2, y_3$. На Рис.~\ref{img:karno_y} приведены карты Карно для минимизации $y_1, y_2, y_3$ соответственно.
 
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{y1.png}
-  \caption{Карта Карно для $y_1$}
-  \label{img:y1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{y2.png}
-  \caption{Карта Карно для $y_2$}
-  \label{img:y2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.7\linewidth]{y3.png}
-  \caption{Карта Карно для $y_3$}
-  \label{img:y3}
-\end{figure}
+  \centering \subfigure[]{
+    \includegraphics[width=0.4\linewidth]{y1.png} \label{img:y1} }  
+    \hspace{4ex}
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{y2.png} \label{img:y2} }
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{y3.png} \label{img:y3} }  
+    \caption{Карты карно для \subref{img:y1} $y_1$; \subref{img:y2} $y_2$;
+    \subref{img:y3} $y_3$.
+    }
+    \label{img:karno_y}
+  \end{figure}
 
 \[y_1 = \neg x_1 q_1 \neg q_2 + x_1 q_1 q_2 \neg q_3 + x_1 \neg q_1 \neg q_2 \neg q_3\]
 \[y_2 = x_1 q_1 q_2 \neg q_3 + x_1 \neg q_1 \neg q_2 \neg q_3 + \neg x_1 x_2 \neg q_1 q_2 + \neg  x_2 q_1 \neg q_2 q_3\]
 \[y_3 = x_1 q_1 q_2 \neg q_3 + x_1 \neg q_1 \neg q_2 \neg q_3 + \neg x_1 x_2 q_1 \neg q_2 + \neg x_1 x_2 \neg q_1 q_3\]
 
 \subsubsection{Минимизация для $L_1$-$L_6$}
-По Табл.~\ref{tbl:fl} были построены формулы для $L_1, L_2, L_3, L_4, L_5, L_6$. На Рис.~\ref{img:l1}-\ref{img:l6} приведены карты Карно для минимизации $L_1, L_2, L_3, L_4, L_5, L_6$ соответственно.
+По Табл.~\ref{tbl:fl} были построены формулы для $L_1, L_2, L_3, L_4, L_5, L_6$. На Рис.~\ref{img:karno_l} приведены карты Карно для минимизации $L_1, L_2, L_3, L_4, L_5, L_6$ соответственно.
 
+\newpage
 \begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l1.png}
-  \caption{Карта Карно для $L_1$}
-  \label{img:l1}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l2.png}
-  \caption{Карта Карно для $L_2$}
-  \label{img:l2}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l3.png}
-  \caption{Карта Карно для $L_3$}
-  \label{img:l3}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l4.png}
-  \caption{Карта Карно для $L_4$}
-  \label{img:l4}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l5.png}
-  \caption{Карта Карно для $L_5$}
-  \label{img:l5}
-\end{figure}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{l6.png}
-  \caption{Карта Карно для $L_6$}
-  \label{img:l6}
-\end{figure}
+  \centering 
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l1.png} \label{img:l1} }  
+  \hspace{4ex}
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l2.png} \label{img:l2} }
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l3.png} \label{img:l3} }  
+  \hspace{4ex}
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l4.png} \label{img:l4} }
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l5.png} \label{img:l5} }  
+  \hspace{4ex}
+  \subfigure[]{\includegraphics[width=0.4\linewidth]{l6.png} \label{img:l6} }
+      
+  \caption{Карты карно для \subref{img:l1} $L_1$; \subref{img:l2} $L_2$;
+  \subref{img:l3} $L_3$; \subref{img:l4} $L_4$; \subref{img:l5} $L_5$;
+  \subref{img:l6} $L_6$.
+  }
+  \label{img:karno_l}
+  \end{figure}
 
 \[L_1 = q_1 \neg q_2 \neg q_3\]
 \[L_2 = q_1 \neg q_2\]
