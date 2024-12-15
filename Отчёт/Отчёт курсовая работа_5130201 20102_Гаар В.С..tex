@@ -707,10 +707,30 @@ stringstyle =\bfseries} % шрифт для строк
 \[y_2 = x_1 q_1 q_2 \neg q_3 + x_1 \neg q_1 \neg q_2 \neg q_3 + \neg x_1 x_2 \neg q_1 q_2 + \neg  x_2 q_1 \neg q_2 q_3\]
 \[y_3 = x_1 q_1 q_2 \neg q_3 + x_1 \neg q_1 \neg q_2 \neg q_3 + \neg x_1 x_2 q_1 \neg q_2 + \neg x_1 x_2 \neg q_1 q_3\]
 
+\subsubsection{Минимизация для $i_1$-$i_4$}
+По Табл.~\ref{tbl:f} были построены формулы для $i_1, i_2, i_3, i_4$. На Рис.~\ref{img:karno_i} приведены карты Карно для минимизации $i_1, i_2, i_3, i_4$ соответственно.
+
+\begin{figure}[H]
+  \centering \subfigure[]{
+    \includegraphics[width=0.4\linewidth]{i1.png} \label{img:i1} }  
+    \hspace{4ex}
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{i2.png} \label{img:i2} }
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{i3.png} \label{img:i3} }  
+    \hspace{4ex}
+    \subfigure[]{\includegraphics[width=0.4\linewidth]{i4.png} \label{img:i4} }
+    \caption{Карты карно для \subref{img:i1} $i_1$; \subref{img:i2} $i_2$; \subref{img:i3} $i_3$; \subref{img:i4} $i_4$.
+    }
+    \label{img:karno_i}
+  \end{figure}
+
+\[i_1 = \neg x_1 x_2 \neg q_1 \neg q_2 q_3\]
+\[i_2 = \neg x_1 x_2 \neg q_1 q_2 \neg q_3\]
+\[i_3 = \neg x_1 x_2 \neg q_1 q_2 q_3\]
+\[i_4 = \neg x_2 q_1 \neg q_2 q_3\]
+
 \subsubsection{Минимизация для $L_1$-$L_6$}
 По Табл.~\ref{tbl:fl} были построены формулы для $L_1, L_2, L_3, L_4, L_5, L_6$. На Рис.~\ref{img:karno_l} приведены карты Карно для минимизации $L_1, L_2, L_3, L_4, L_5, L_6$ соответственно.
 
-\newpage
 \begin{figure}[H]
   \centering 
   \subfigure[]{\includegraphics[width=0.4\linewidth]{l1.png} \label{img:l1} }  
@@ -737,6 +757,10 @@ stringstyle =\bfseries} % шрифт для строк
 \[L_5 = q_1 q_2 + q_2 q_3 + \neg q_1 \neg q_2 \neg q_3\]
 \[L_6 = \neg q_1 + \neg q_2\]
 
+\newpage
+\section{Схемотехническая реализация}
+\subsection{Анализ схемотехнических элементов}
+\subsubsection{Индикаторный преобразователь (ИП)}
 
 \cleardoublepage
 \phantomsection
