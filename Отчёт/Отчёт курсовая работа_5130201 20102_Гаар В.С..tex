@@ -27,7 +27,6 @@
 %\usepackage{float}
 \usepackage{booktabs}
 \usepackage{floatrow}
-\usepackage{scalerel} % Stretching images
 \usepackage[final]{pdfpages}
 \usepackage{multirow}
 \usepackage{array}
@@ -47,7 +46,8 @@
 \definecolor{brackets}{HTML}{B40000} % цвет скобок в коде
 
 
-
+% Выравнивание подписи влево для таблиц
+\captionsetup[table]{justification=raggedright, singlelinecheck=false}
 
 
 \AtBeginDocument{\renewcommand{\contentsname}{Содержание}}
