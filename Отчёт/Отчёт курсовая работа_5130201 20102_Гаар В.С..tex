@@ -312,21 +312,20 @@ stringstyle =\bfseries} % шрифт для строк
   \item $S_1$ -- состояние коррекции минут (\textit{minutes correction}). В этом состоянии горят только индикаторы минут.
   \item $S_2$ -- состояние коррекции часов (\textit{hours correction}). В этом состоянии горят только индикаторы часов.
   \item $S_3$ -- состояние коррекции дня недели (\textit{day of the week correction}). В этом состоянии горит только индикатор дня недели.
-  \item $S_4$ -- состояние отображения времени секундомера (\textit{stopwatch}). На индикаторах -- идущее время (минуты и секунды) секундомера.
+  \item $S_4$ -- состояние запущенного секундомера (\textit{stopwatch running}). На индикаторах -- идущее время (минуты и секунды) секундомера.
   \item $S_5$ -- состояние остановленного секундомера (\textit{stopwatch pause}). На индикаторах -- минуты и секунды секундомера. В этом состоянии секундомер не отсчитывает время.
   \item $S_6$ -- состояние остановленных часов (\textit{time stop}). На индикаторах -- часы, минуты и день недели. В этом состоянии время зафиксировано и не изменяется.
 \end{itemize}
 
 Множество выходных сигналов $Y = \{z_0, z_1, z_2, z_3, z_4, z_5, z_6\}$, где
 \begin{itemize}
-  \item $z_0$ -- нейтральный сигнал.
+  \item $z_0$ -- нейтральный сигнал;
   \item $z_1$ -- прибавление единицы к минутам при корректировке;
   \item $z_2$ -- прибавление единицы к часам при корректировке;
   \item $z_3$ -- смена дня недели на следующий при корректировке;
-  \item $z_4$ -- запуск секундомера;
-  \item $z_5$ -- остановка/запуск секундомера;
-  \item $z_6$ -- сброс текущего значения секундомера;
-  \item $z_7$ -- остановка/запуск часов.
+  \item $z_4$ -- остановка/запуск секундомера;
+  \item $z_5$ -- сброс текущего значения секундомера;
+  \item $z_6$ -- остановка/запуск часов.
 \end{itemize}
 
 Входной алфавит $\Sigma = \{a, b, ab\}$, где
@@ -417,8 +416,8 @@ stringstyle =\bfseries} % шрифт для строк
   \hline
   % s0
   a  & $s_0:$ time & $s_1:$ minutes correction & $z_0$ \\
-  b  & $s_0:$ time & $s_4:$ stopwatch & $z_0$ \\
-  ab & $s_0:$ time & $s_6:$ time stop & $z_7$ \\
+  b  & $s_0:$ time & $s_4:$ stopwatch running & $z_0$ \\
+  ab & $s_0:$ time & $s_6:$ time stop & $z_6$ \\
   \hline
 
   % s1
@@ -440,21 +439,21 @@ stringstyle =\bfseries} % шрифт для строк
   \hline
 
   % s4
-  a  & $s_4:$ stopwatch & $s_4:$ stopwatch & $z_4$ \\
-  b  & $s_4:$ stopwatch & $s_5:$ stopwatch pause & $z_5$ \\
-  ab & $s_4:$ stopwatch & $s_0:$ time & $z_0$ \\
+  a  & $s_4:$ stopwatch running & $s_4:$ stopwatch running & $z_5$ \\
+  b  & $s_4:$ stopwatch running & $s_5:$ stopwatch pause & $z_4$ \\
+  ab & $s_4:$ stopwatch running & $s_0:$ time & $z_5$ \\
   \hline
 
   % s5
-  a  & $s_5:$ stopwatch pause & $s_5:$ stopwatch pause & $z_6$ \\
-  b  & $s_5:$ stopwatch pause & $s_4:$ stopwatch & $z_5$ \\
-  ab & $s_5:$ stopwatch pause & $s_0:$ time & $z_0$ \\
+  a  & $s_5:$ stopwatch pause & $s_5:$ stopwatch pause & $z_5$ \\
+  b  & $s_5:$ stopwatch pause & $s_4:$ stopwatch running & $z_4$ \\
+  ab & $s_5:$ stopwatch pause & $s_0:$ time & $z_5$ \\
   \hline
 
   % s6
   a  & $s_6:$ time stop & $s_6:$ time stop & $z_0$ \\
   b  & $s_6:$ time stop & $s_6:$ time stop & $z_0$ \\
-  ab & $s_6:$ time stop & $s_0:$ time & $z_7$ \\
+  ab & $s_6:$ time stop & $s_0:$ time & $z_6$ \\
   \hline
   \end{tabularx}
 \end{table}
@@ -587,11 +586,11 @@ stringstyle =\bfseries} % шрифт для строк
   \hline
 
   %         S4
-  1 & 0 &   1 & 0 & 0 &  1 & 0 & 0 &  0 & 0 & 0 & 0\\
+  1 & 0 &   1 & 0 & 0 &  1 & 0 & 0 &  0 & 0 & 0 & 1\\
   \hline
   0 & 1 &   1 & 0 & 0 &  1 & 0 & 1 &  0 & 0 & 0 & 0\\
   \hline
-  1 & 1 &   1 & 0 & 0 &  0 & 0 & 0 &  0 & 0 & 0 & 0\\
+  1 & 1 &   1 & 0 & 0 &  0 & 0 & 0 &  0 & 0 & 0 & 1\\
   \hline
 
   %         S5
@@ -599,7 +598,7 @@ stringstyle =\bfseries} % шрифт для строк
   \hline
   0 & 1 &   1 & 0 & 1 &  1 & 0 & 0 &  0 & 0 & 0 & 0\\
   \hline
-  1 & 1 &   1 & 0 & 1 &  0 & 0 & 0 &  0 & 0 & 0 & 0\\
+  1 & 1 &   1 & 0 & 1 &  0 & 0 & 0 &  0 & 0 & 0 & 1\\
   \hline
 
   %         S6
@@ -680,7 +679,7 @@ stringstyle =\bfseries} % шрифт для строк
 \[i_1 = \neg x_1 \neg q_1 \neg q_2 q_3\]
 \[i_2 = \neg x_1 \neg q_1 q_2 \neg q_3\]
 \[i_3 = \neg x_1 q_2 q_3\]
-\[i_4 = \neg x_2 q_1 q_3\]
+\[i_4 = x_1 q_1 \neg q_2\]
 
 \subsubsection{Минимизация для $L_1$-$L_6$}
 По Табл.~\ref{tbl:fl} были построены формулы для $L_1, L_2, L_3, L_4, L_5, L_6$. На Рис.~\ref{img:karno_l} приведены карты Карно для минимизации $L_1, L_2, L_3, L_4, L_5, L_6$ соответственно.
